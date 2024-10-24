@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Detalle Producto</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <h1>Bienvenido, <span th:text="${nombre_usuario}"></span></h1>
+    <a href="/logout" class="btn btn-primary">Cerrar sesión</a>
+    <h2>Detalle Producto</h2>
+    <p><strong>Nombre:</strong> <span th:text="${producto.nombre}"></span></p>
+    <p><strong>Precio:</strong> <span th:text="${producto.precio}"></span></p>
+    <p><strong>Stock:</strong> <span th:text="${producto.stock}"></span></p>
+    <p><strong>Categoría:</strong> <span th:text="${producto.categoria}"></span></p>
+    <a href="/listarProductos" class="btn btn-secondary">Atrás</a>
+    <a th:href="@{/productos/eliminar/{id}(id=${producto.productoId})}" class="btn btn-danger">Eliminar Producto</a>
+</div>
+</body>
+</html>
